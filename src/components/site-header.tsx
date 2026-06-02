@@ -14,11 +14,11 @@ export function SiteHeader() {
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-md bg-mint text-primary-foreground font-display font-bold">
-            N
+            W
             <span className="absolute inset-0 rounded-md bg-mint blur-md opacity-60 group-hover:opacity-90 transition-opacity -z-10" />
           </span>
           <span className="font-display text-lg font-bold tracking-tight">
-            Northbeam<span className="text-mint">.</span>
+            Webbly<span className="text-mint">.</span>
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-1 text-sm">

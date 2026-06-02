@@ -3,9 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Northbeam Studio" },
-      { name: "description", content: "Brand, website design, web development, and growth retainers from Northbeam Studio." },
-      { property: "og:title", content: "Services — Northbeam Studio" },
+      { title: "Services — Webbly Studio" },
+      { name: "description", content: "Brand, website design, web development, and growth retainers from Webbly Studio." },
+      { property: "og:title", content: "Services — Webbly Studio" },
       { property: "og:description", content: "Brand, web design, development, and growth retainers." },
     ],
   }),

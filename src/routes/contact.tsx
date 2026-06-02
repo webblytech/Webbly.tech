@@ -4,9 +4,9 @@ import { useState } from "react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Northbeam Studio" },
+      { title: "Contact — Webbly Studio" },
       { name: "description", content: "Tell us about your project. We respond to every inquiry within 48 hours." },
-      { property: "og:title", content: "Contact — Northbeam Studio" },
+      { property: "og:title", content: "Contact — Webbly Studio" },
       { property: "og:description", content: "Tell us about your project. We respond within 48 hours." },
     ],
   }),
@@ -35,8 +35,8 @@ function ContactPage() {
         <div className="space-y-8">
           <div>
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Email</div>
-            <a href="mailto:hello@northbeam.studio" className="font-display text-2xl font-semibold hover:text-mint">
-              hello@northbeam.studio
+            <a href="mailto:hello@Webbly.studio" className="font-display text-2xl font-semibold hover:text-mint">
+              hello@Webbly.studio
             </a>
           </div>
           <div>
