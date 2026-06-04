@@ -4,10 +4,10 @@ import { WorkMasonry } from "@/components/work-masonry";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — Webbly Studio" },
-      { name: "description", content: "Selected websites, brands, and product UI built by Webbly for founders and ambitious teams." },
-      { property: "og:title", content: "Work — Webbly Studio" },
-      { property: "og:description", content: "Selected websites, brands, and product UI by Webbly." },
+      { title: "Work — Northbeam Studio" },
+      { name: "description", content: "Selected websites, brands, and product UI built by Northbeam for founders and ambitious teams." },
+      { property: "og:title", content: "Work — Northbeam Studio" },
+      { property: "og:description", content: "Selected websites, brands, and product UI by Northbeam." },
     ],
   }),
   component: WorkPage,

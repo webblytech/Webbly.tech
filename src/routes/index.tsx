@@ -5,9 +5,9 @@ import { WorkMasonry } from "@/components/work-masonry";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Webbly — Websites that compound, not just convert" },
-      { name: "description", content: "Webbly is an independent digital studio designing and building modern websites for ambitious brands." },
-      { property: "og:title", content: "Webbly — Websites that compound, not just convert" },
+      { title: "Northbeam — Websites that compound, not just convert" },
+      { name: "description", content: "Northbeam is an independent digital studio designing and building modern websites for ambitious brands." },
+      { property: "og:title", content: "Northbeam — Websites that compound, not just convert" },
       { property: "og:description", content: "An independent digital studio designing and building modern websites for ambitious brands." },
     ],
   }),
@@ -40,7 +40,7 @@ function Hero() {
           Websites that <span className="text-gradient-mint">compound</span>, not just convert.
         </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl">
-          Webbly is an independent studio designing and engineering modern websites for ambitious founders, operators, and brands.
+          Northbeam is an independent studio designing and engineering modern websites for ambitious founders, operators, and brands.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link

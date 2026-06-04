@@ -3,9 +3,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Webbly Studio" },
-      { name: "description", content: "Webbly is a small, senior, fully-remote studio building websites for ambitious teams." },
-      { property: "og:title", content: "About — Webbly Studio" },
+      { title: "About — Northbeam Studio" },
+      { name: "description", content: "Northbeam is a small, senior, fully-remote studio building websites for ambitious teams." },
+      { property: "og:title", content: "About — Northbeam Studio" },
       { property: "og:description", content: "A small, senior, fully-remote studio building websites for ambitious teams." },
     ],
   }),
@@ -48,7 +48,7 @@ function AboutPage() {
         <div className="space-y-6">
           <div className="rounded-2xl border border-border bg-surface p-8">
             <div className="text-xs uppercase tracking-widest text-mint">Studio</div>
-            <h3 className="mt-4 font-display text-3xl font-bold">Webbly, est. 2021</h3>
+            <h3 className="mt-4 font-display text-3xl font-bold">Northbeam, est. 2021</h3>
             <p className="mt-3 text-muted-foreground">
               Founded by alumni of Stripe, Linear, and Pentagram. Headquartered in San Francisco, working with teams across NA & EU.
             </p>
