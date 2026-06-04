@@ -9,7 +9,7 @@ export function SiteFooter() {
             Let's build something <span className="text-gradient-mint">unforgettable.</span>
           </div>
           <p className="mt-3 text-muted-foreground max-w-md">
-            Northbeam is a digital studio crafting websites that win attention and convert.
+            Webbly is a digital studio crafting websites that win attention and convert.
           </p>
           <Link
             to="/contact"
@@ -30,7 +30,7 @@ export function SiteFooter() {
         <div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Contact</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>hello@northbeam.studio</li>
+            <li>hello@webbly.studio</li>
             <li>+1 (415) 555-0148</li>
             <li>San Francisco · Remote</li>
           </ul>
@@ -38,7 +38,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} Northbeam Studio. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Webbly Studio. All rights reserved.</span>
           <span>Designed & built in-house.</span>
         </div>
       </div>

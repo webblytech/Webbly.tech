@@ -18,7 +18,7 @@ export function SiteHeader() {
             <span className="absolute inset-0 rounded-md bg-mint blur-md opacity-60 group-hover:opacity-90 transition-opacity -z-10" />
           </span>
           <span className="font-display text-lg font-bold tracking-tight">
-            Northbeam<span className="text-mint">.</span>
+            Webbly<span className="text-mint">.</span>
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-1 text-sm">
