@@ -37,9 +37,15 @@ function Hero() {
           <span className="h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_10px_var(--mint)]" />
           Booking Q3 2026 — 4 slots remaining!
         </div>
-        <h1 className="mt-6 font-display font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-5xl">
-        Your vision,          <span className="text-gradient-mint">            Your website.</span>
-        </h1>
+              <h1 className="mt-6 font-display font-bold tracking-tight max-w-5xl">
+        <span className="block text-5xl md:text-7xl lg:text-8xl leading-none">
+          Your vision,
+        </span>
+
+        <span className="block text-gradient-mint text-6xl md:text-8xl lg:text-9xl leading-none">
+          Your website.
+        </span>
+      </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl">
           Webbly is a website design and development agency. We design, build, launch,
           and continuously improve websites that help businesses grow online.
