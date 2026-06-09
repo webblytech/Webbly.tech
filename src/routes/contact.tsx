@@ -51,7 +51,7 @@ function ContactPage() {
           </div>
           <div className="rounded-2xl border border-border bg-surface p-6">
             <div className="text-xs uppercase tracking-widest text-mint mb-2">Availability</div>
-            <div className="font-display text-lg font-semibold">Booking Q3 2026 — 2 slots</div>
+            <div className="font-display text-lg font-semibold">Booking Q3 2026 — 4 slots remaining!</div>
             <p className="mt-2 text-sm text-muted-foreground">Typical engagement runs 6–10 weeks.</p>
           </div>
         </div>

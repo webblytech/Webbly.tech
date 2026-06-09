@@ -34,7 +34,7 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 md:pt-32 md:pb-40">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_10px_var(--mint)]" />
-          Booking Q3 2026 — 2 slots remaining
+          Booking Q3 2026 — 4 slots remaining!
         </div>
         <h1 className="mt-6 font-display font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-5xl">
           Websites that <span className="text-gradient-mint">compound</span>, not just convert.
@@ -58,10 +58,10 @@ function Hero() {
         </div>
         <dl className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl">
           {[
-            ["120+", "Sites shipped"],
-            ["6 wks", "Avg. timeline"],
+            ["20+", "Sites shipped"],
+            ["3 wks", "Avg. timeline"],
             ["4.9★", "Client rating"],
-            ["$48M", "Raised by clients"],
+            ["98k", "Views on websites made for clients"],
           ].map(([n, l]) => (
             <div key={l}>
               <dt className="font-display text-3xl md:text-4xl font-bold text-foreground">{n}</dt>
@@ -75,7 +75,7 @@ function Hero() {
 }
 
 function Logos() {
-  const logos = ["Halcyon", "Atelier Nord", "Northcard", "Monolith", "Lumen", "Frame"];
+  const logos = ["Halcyon", "Atelier Nord", "Northcard", "Monolith", "Lumen", "Maison Lumière"];
   return (
     <section className="border-y border-border/60 bg-surface/30">
       <div className="mx-auto max-w-7xl px-6 py-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">

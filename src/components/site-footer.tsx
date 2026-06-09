@@ -30,9 +30,9 @@ export function SiteFooter() {
         <div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Contact</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>hello@webbly.studio</li>
-            <li>+1 (415) 555-0148</li>
-            <li>San Francisco · Remote</li>
+            <li>development@webbly.tech</li>
+            <li>+44 7392511367</li>
+            <li>Glasgow · Remote</li>
           </ul>
         </div>
       </div>
