@@ -18,6 +18,7 @@ function Index() {
   return (
     <>
       <Hero />
+      <WhatWeDo />
       <Logos />
       <FeaturedWork />
       <Process />
@@ -37,10 +38,11 @@ function Hero() {
           Booking Q3 2026 — 4 slots remaining!
         </div>
         <h1 className="mt-6 font-display font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-5xl">
-          Websites that <span className="text-gradient-mint">compound</span>, not just convert.
+        We build websites that help businesses<span className="text-gradient-mint">get more customers.</span>
         </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl">
-          Webbly is an independent studio designing and engineering modern websites for ambitious founders, operators, and brands.
+          Webbly is a website design and development agency. We design, build, launch,
+          and continuously improve websites that help businesses grow online.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
@@ -69,6 +71,52 @@ function Hero() {
             </div>
           ))}
         </dl>
+      </div>
+    </section>
+  );
+}
+
+function WhatWeDo() {
+  return (
+    <section className="mx-auto max-w-7xl px-6 py-20">
+      <div className="max-w-4xl">
+        <div className="text-xs uppercase tracking-widest text-mint mb-3">
+          What we do
+        </div>
+
+        <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+          Your website shouldn't be holding your business back.
+        </h2>
+
+        <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
+          Whether you're launching a new business, refreshing an outdated site,
+          or trying to generate more leads online, Webbly handles the entire
+          process—from strategy and design to development, launch, SEO, and
+          ongoing improvements.
+        </p>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div>
+            <h3 className="font-semibold">Website Design</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Modern designs built around trust, clarity, and conversion.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold">Website Development</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Fast, responsive, SEO-friendly websites built for growth.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold">Ongoing Growth</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              We help improve performance long after launch.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
