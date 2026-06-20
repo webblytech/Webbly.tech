@@ -1,13 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import type { FormEvent } from "react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Webbly Studio" },
-      { name: "description", content: "Tell us about your project. We respond to every inquiry within 48 hours." },
+      {
+        name: "description",
+        content:
+          "Tell us about your project. We respond to every inquiry within 48 hours.",
+      },
       { property: "og:title", content: "Contact — Webbly Studio" },
-      { property: "og:description", content: "Tell us about your project. We respond within 48 hours." },
+      {
+        property: "og:description",
+        content: "Tell us about your project. We respond within 48 hours.",
+      },
     ],
   }),
   component: ContactPage,
@@ -15,6 +23,46 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    const form = new FormData(e.currentTarget);
+
+    const data = {
+      name: form.get("name"),
+      email: form.get("email"),
+      company: form.get("company"),
+      budget: form.get("budget"),
+      message: form.get("message"),
+      projectTypes: form.getAll("type"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send enquiry");
+      }
+
+      setSent(true);
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error(error);
+      alert("Sorry, there was a problem sending your enquiry. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -34,33 +82,47 @@ function ContactPage() {
       <section className="mx-auto max-w-7xl px-6 py-20 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
         <div className="space-y-8">
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Email</div>
-            <a href="mailto:hello@webbly.studio" className="font-display text-2xl font-semibold hover:text-mint">
+            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+              Email
+            </div>
+            <a
+              href="mailto:development@webbly.tech"
+              className="font-display text-2xl font-semibold hover:text-mint"
+            >
               development@webbly.tech
             </a>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Phone</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+              Phone
+            </div>
             <div className="font-display text-2xl font-semibold">+44 7392511367</div>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Studio</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+              Studio
+            </div>
             <div className="text-muted-foreground">
-              Glasgow,<br />Scotland, United Kingdom<br />Remote-first, worldwide.
+              Glasgow,
+              <br />
+              Scotland, United Kingdom
+              <br />
+              Remote-first, worldwide.
             </div>
           </div>
           <div className="rounded-2xl border border-border bg-surface p-6">
             <div className="text-xs uppercase tracking-widest text-mint mb-2">Availability</div>
-            <div className="font-display text-lg font-semibold">Booking Q3 2026 — 4 slots remaining!</div>
-            <p className="mt-2 text-sm text-muted-foreground">Typical engagement runs 6–10 weeks.</p>
+            <div className="font-display text-lg font-semibold">
+              Booking Q3 2026 — 4 slots remaining!
+            </div>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Typical engagement runs 6-10 weeks.
+            </p>
           </div>
         </div>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSent(true);
-          }}
+          onSubmit={handleSubmit}
           className="rounded-2xl border border-border bg-surface p-8 md:p-10 space-y-6"
         >
           {sent ? (
@@ -74,7 +136,9 @@ function ContactPage() {
                 <Field label="Name" name="name" placeholder="Jane Doe" />
                 <Field label="Email" name="email" type="email" placeholder="jane@company.com" />
               </div>
+
               <Field label="Company" name="company" placeholder="Acme Inc." />
+
               <div>
                 <Label>Project type</Label>
                 <div className="mt-2 flex flex-wrap gap-2">
@@ -88,6 +152,7 @@ function ContactPage() {
                   ))}
                 </div>
               </div>
+
               <div>
                 <Label>Budget</Label>
                 <select
@@ -95,27 +160,36 @@ function ContactPage() {
                   className="mt-2 w-full rounded-lg bg-background border border-border px-4 py-3 text-sm focus:border-mint focus:outline-none"
                 >
                   <option>Let's discuss</option>
-                  <option>£1,000 – £2,000"</option>
-                  <option>£2k – £10k</option>
+                  <option>£1,000 - £2,000</option>
+                  <option>£2k - £10k</option>
                   <option>£10k+</option>
-                  <option>£15k+ - Consulation Required</option>
+                  <option>£15k+ - Consultation required</option>
                 </select>
               </div>
+
               <div>
                 <Label>Tell us about the project</Label>
                 <textarea
                   name="message"
                   rows={5}
                   required
-                  placeholder="Goals, timeline, references…"
+                  placeholder="Goals, timeline, references..."
                   className="mt-2 w-full rounded-lg bg-background border border-border px-4 py-3 text-sm focus:border-mint focus:outline-none resize-none"
                 />
               </div>
+
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-mint text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-mint-glow transition-colors glow-mint"
+                disabled={loading}
+                className="inline-flex items-center gap-2 rounded-full bg-mint text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-mint-glow transition-colors glow-mint disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send inquiry <span aria-hidden>→</span>
+                {loading ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    Send inquiry <span aria-hidden>-></span>
+                  </>
+                )}
               </button>
             </>
           )}
