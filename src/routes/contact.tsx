@@ -15,6 +15,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
@@ -35,9 +36,12 @@ function ContactPage() {
         <div className="space-y-8">
           <div>
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Email</div>
-            <a href="mailto:hello@webbly.studio" className="font-display text-2xl font-semibold hover:text-mint">
-              development@webbly.tech
-            </a>
+            <a
+            href="mailto:development@webbly.tech"
+            className="font-display text-2xl font-semibold hover:text-mint"
+          >
+            development@webbly.tech
+          </a>
           </div>
           <div>
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Phone</div>
@@ -57,9 +61,44 @@ function ContactPage() {
         </div>
 
         <form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            setSent(true);
+          
+            setLoading(true);
+          
+            try {
+              const formData = new FormData(e.currentTarget);
+          
+              const projectTypes = formData.getAll("type");
+          
+              const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  name: formData.get("name"),
+                  email: formData.get("email"),
+                  company: formData.get("company"),
+                  budget: formData.get("budget"),
+                  message: formData.get("message"),
+                  projectTypes,
+                }),
+              });
+          
+              if (!response.ok) {
+                throw new Error("Failed to send");
+              }
+          
+              setSent(true);
+          
+              e.currentTarget.reset();
+            } catch (err) {
+              console.error(err);
+              alert("Sorry, something went wrong sending your enquiry.");
+            } finally {
+              setLoading(false);
+            }
           }}
           className="rounded-2xl border border-border bg-surface p-8 md:p-10 space-y-6"
         >
@@ -95,7 +134,7 @@ function ContactPage() {
                   className="mt-2 w-full rounded-lg bg-background border border-border px-4 py-3 text-sm focus:border-mint focus:outline-none"
                 >
                   <option>Let's discuss</option>
-                  <option>£1,000 – £2,000"</option>
+                  <option>£1,000 – £2,000</option>
                   <option>£2k – £10k</option>
                   <option>£10k+</option>
                   <option>£15k+ - Consulation Required</option>
@@ -112,11 +151,13 @@ function ContactPage() {
                 />
               </div>
               <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-mint text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-mint-glow transition-colors glow-mint"
-              >
-                Send inquiry <span aria-hidden>→</span>
-              </button>
+              type="submit"
+              disabled={loading}
+              className="inline-flex items-center gap-2 rounded-full bg-mint text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-mint-glow transition-colors glow-mint disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? "Sending..." : "Send inquiry"}
+              {!loading && <span aria-hidden>→</span>}
+            </button>
             </>
           )}
         </form>
