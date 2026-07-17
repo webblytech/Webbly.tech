@@ -86,20 +86,28 @@ function ContactPage() {
                 }),
               });
           
+              // Check if the response is OK
               if (!response.ok) {
                 const errorData = await response.json(); // Parse error details if available
                 console.error("Error response:", errorData);
-                throw new Error(errorData.message || "Failed to send");
+                throw new Error(errorData.error || "Failed to send inquiry.");
               }
           
-              const responseData = await response.json(); // Parse success response
+              // Parse the success response
+              const responseData = await response.json();
               console.log("Success response:", responseData);
           
+              // Check if the success flag is true
+              if (!responseData.success) {
+                throw new Error(responseData.message || "Failed to send inquiry.");
+              }
+          
+              // If successful, update the state and reset the form
               setSent(true);
               e.currentTarget.reset();
             } catch (err) {
-              console.error(err);
-              alert("Sorry, something went wrong sending your enquiry.");
+              console.error("Error submitting form:", err);
+              alert(err.message || "Sorry, something went wrong sending your inquiry.");
             } finally {
               setLoading(false);
             }
