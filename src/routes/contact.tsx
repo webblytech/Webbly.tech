@@ -87,11 +87,15 @@ function ContactPage() {
               });
           
               if (!response.ok) {
-                throw new Error("Failed to send");
+                const errorData = await response.json(); // Parse error details if available
+                console.error("Error response:", errorData);
+                throw new Error(errorData.message || "Failed to send");
               }
           
-              setSent(true);
+              const responseData = await response.json(); // Parse success response
+              console.log("Success response:", responseData);
           
+              setSent(true);
               e.currentTarget.reset();
             } catch (err) {
               console.error(err);

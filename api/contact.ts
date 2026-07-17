@@ -5,6 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({
+      success: false,
       error: "Method not allowed",
     });
   }
@@ -21,54 +22,52 @@ export default async function handler(req: any, res: any) {
 
     if (!name || !email || !message) {
       return res.status(400).json({
+        success: false,
         error: "Missing required fields.",
       });
     }
 
+    if (projectTypes && !Array.isArray(projectTypes)) {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid project types format.",
+      });
+    }
+
+    console.log("Received contact form submission:", req.body);
+
     await resend.emails.send({
       from: "Webbly <development@webbly.tech>",
-
       to: ["development@webbly.tech"],
-
       replyTo: email,
-
       subject: `New Website Enquiry (via contact form)- ${name}`,
-
       html: `
         <h2>New enquiry received</h2>
-
         <p><strong>Name:</strong> ${name}</p>
-
         <p><strong>Email:</strong> ${email}</p>
-
         <p><strong>Company:</strong> ${company || "Not provided"}</p>
-
         <p><strong>Budget:</strong> ${budget}</p>
-
         <p><strong>Project Types:</strong></p>
-
         <ul>
-            ${
-            (projectTypes ?? [])
-                .map((x: string) => `<li>${x}</li>`)
-                .join("")
-            }
+            ${(projectTypes ?? []).map((x: string) => `<li>${x}</li>`).join("")}
         </ul>
-
         <p><strong>Message</strong></p>
-
         <p>${message.replace(/\n/g, "<br/>")}</p>
       `,
     });
 
+    console.log("Email sent successfully.");
+
     return res.status(200).json({
       success: true,
+      message: "Email sent successfully.",
     });
-  } catch (err) {
-    console.error(err);
+  } catch (err: any) {
+    console.error("Error sending email:", err.message || err);
 
     return res.status(500).json({
-      error: "Failed to send email.",
+      success: false,
+      error: "Failed to send email. Please try again later.",
     });
   }
 }
