@@ -50,7 +50,7 @@ function AboutPage() {
             <div className="text-xs uppercase tracking-widest text-mint">Studio</div>
             <h3 className="mt-4 font-display text-3xl font-bold">Webbly, est. 2025</h3>
             <p className="mt-3 text-muted-foreground">
-              Founded by alumni of Stripe, Linear, and Pentagram. Headquartered in San Francisco, working with teams across NA & EU.
+              Founded by alumni of JP Morgan, Santander and University of Strathclyde. Headquartered in United Kingdom, working with teams across EU, ASIA & NA.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6">
