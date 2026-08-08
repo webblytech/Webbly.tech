@@ -1,5 +1,5 @@
 export function renderErrorPage(): string {
-  return `<!doctype html>
+  return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -21,10 +21,15 @@ export function renderErrorPage(): string {
       <h1>This page didn't load</h1>
       <p>Something went wrong on our end. You can try refreshing or head back home.</p>
       <div class="actions">
-        <button class="primary" onclick="location.reload()">Try again</button>
-        <a class="secondary" href="/">Go home</a>
+        <button class="primary" id="reload-button" aria-label="Reload the page">Try again</button>
+        <a class="secondary" href="/" aria-label="Go back to the homepage">Go home</a>
       </div>
     </div>
+    <script>
+      document.getElementById('reload-button').addEventListener('click', () => {
+        location.reload();
+      });
+    </script>
   </body>
 </html>`;
 }

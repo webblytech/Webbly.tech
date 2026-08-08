@@ -104,10 +104,14 @@ function ContactPage() {
           
               // If successful, update the state and reset the form
               setSent(true);
-              e.currentTarget.reset();
             } catch (err) {
               console.error("Error submitting form:", err);
-              alert(err.message || "Sorry, something went wrong sending your inquiry.");
+            
+              alert(
+                err instanceof Error
+                  ? err.message
+                  : "Sorry, something went wrong sending your inquiry."
+              );
             } finally {
               setLoading(false);
             }
