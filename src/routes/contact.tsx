@@ -149,11 +149,11 @@ function ContactPage() {
                   name="budget"
                   className="mt-2 w-full rounded-lg bg-background border border-border px-4 py-3 text-sm focus:border-mint focus:outline-none"
                 >
-                  <option>Let's discuss</option>
-                  <option>£1,000 – £2,000</option>
-                  <option>£2k – £10k</option>
-                  <option>£10k+</option>
-                  <option>£15k+ - Consulation Required</option>
+                  <option>Not sure? Let's discuss</option>
+                  <option>£600 – £1,000</option>
+                  <option>£1k – £2k Extended Services Package</option>
+                  <option>£5k+ - Premium Package</option>
+                  <option>£15k+ - Full consulation Required</option>
                 </select>
               </div>
               <div>
