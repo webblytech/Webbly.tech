@@ -5,9 +5,9 @@ import { WorkMasonry } from "@/components/work-masonry";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Webbly — Websites that Kickass" },
+      { title: "Webbly — Kickass Websites" },
       { name: "description", content: "Webbly is an independent digital studio designing and building modern websites for ambitious brands." },
-      { property: "og:title", content: "Webbly — Websites that Kickass" },
+      { property: "og:title", content: "Webbly — Kickass Websites" },
       { property: "og:description", content: "An independent digital studio designing and building modern websites for ambitious brands." },
     ],
   }),
