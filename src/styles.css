@@ -165,6 +165,26 @@
 }
 
 @layer utilities {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .scroll-reveal.is-visible {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
   .text-gradient-mint {
     background: linear-gradient(135deg, var(--mint-glow) 0%, var(--mint) 60%, oklch(0.6 0.15 175) 100%);
     -webkit-background-clip: text;

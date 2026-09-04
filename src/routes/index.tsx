@@ -32,14 +32,14 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-mint/20 blur-[140px]" />
-      <div className="relative mx-auto max-w-7xl px-6 pt-12 pb-28 md:pt-20 md:pb-40">
+      <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-36 md:pt-24 md:pb-48">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_10px_var(--mint)]" />
-          Booking Q3 2026 — 4 slots remaining!
+          Booking Q3 2026 — 2 slots remaining!
         </div>
         <h1 className="mt-6 font-display font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[0.9] max-w-5xl">
-          <span className="block">Websites that grow</span>
-          <span className="block text-gradient-mint">businesses.</span>
+          <span className="block">We make</span>
+          <span className="mt-2 block text-gradient-mint">Better Websites.</span>
         </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl">
           Webbly is a website design and development agency. We design, build, launch,
@@ -59,7 +59,7 @@ function Hero() {
             See the work
           </Link>
         </div>
-        <dl className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl">
+        <dl className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl">
           {[
             ["20+", "Sites shipped"],
             ["3 wks", "Avg. timeline"],
