@@ -4,6 +4,7 @@ import fintech from "@/assets/work-fintech.jpg";
 import architecture from "@/assets/work-architecture.jpg";
 import restaurant from "@/assets/work-restaurant.jpg";
 import fitness from "@/assets/work-fitness.jpg";
+import maisonLumiere from "@/assets/work-maison-lumiere.png";
 
 export type Project = {
   slug: string;
@@ -16,9 +17,23 @@ export type Project = {
   height: number;
   span?: "tall" | "wide" | "normal";
   blurb: string;
+  website?: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "maison-lumiere",
+    title: "A fragrance house, bottled in light",
+    client: "Maison Lumiere",
+    category: "E-commerce · Fragrance",
+    year: "2026",
+    image: maisonLumiere,
+    width: 3599,
+    height: 1832,
+    span: "wide",
+    blurb: "E-commerce experience for a Parisian fragrance house composing rare scents.",
+    website: "https://perfumed-pages-shop.vercel.app/",
+  },
   {
     slug: "halcyon",
     title: "A dashboard you actually want to open",
