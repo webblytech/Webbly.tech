@@ -163,7 +163,7 @@ function FeaturedWork() {
           View all projects <span aria-hidden>→</span>
         </Link>
       </div>
-      <WorkMasonry limit={6} />
+      <WorkMasonry limit={7} />
     </section>
   );
 }

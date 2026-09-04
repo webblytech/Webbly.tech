@@ -1,7 +1,7 @@
 import { projects, type Project } from "@/data/projects";
 
 function Card({ p }: { p: Project }) {
-  return (
+  const card = (
     <article className="group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl border border-border/60 bg-surface">
       <div className="overflow-hidden">
         <img
@@ -25,6 +25,12 @@ function Card({ p }: { p: Project }) {
       </div>
     </article>
   );
+
+  return p.website ? (
+    <a href={p.website} target="_blank" rel="noreferrer" className="block">
+      {card}
+    </a>
+  ) : card;
 }
 
 export function WorkMasonry({ limit }: { limit?: number }) {
