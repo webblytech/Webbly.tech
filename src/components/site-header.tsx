@@ -1,4 +1,14 @@
 import { Link } from "@tanstack/react-router";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -41,6 +51,40 @@ export function SiteHeader() {
           Start a project
           <span aria-hidden>→</span>
         </Link>
+        <Sheet>
+          <SheetTrigger className="inline-flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-semibold text-muted-foreground transition-colors hover:bg-surface hover:text-foreground md:hidden" aria-label="Open navigation menu">
+            <Menu className="h-5 w-5" />
+            <span>Menu</span>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[min(22rem,85vw)] bg-background px-6 pt-12">
+            <SheetHeader className="text-left">
+              <SheetTitle className="font-display text-2xl">Webbly<span className="text-mint">.</span></SheetTitle>
+              <SheetDescription>Websites that grow businesses.</SheetDescription>
+            </SheetHeader>
+            <nav className="mt-10 flex flex-col gap-2">
+              {nav.map((item) => (
+                <SheetClose asChild key={item.to}>
+                  <Link
+                    to={item.to}
+                    activeProps={{ className: "rounded-md bg-surface px-4 py-3 font-semibold text-foreground" }}
+                    activeOptions={{ exact: item.to === "/" }}
+                    className="rounded-md px-4 py-3 text-lg text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
+                  >
+                    {item.label}
+                  </Link>
+                </SheetClose>
+              ))}
+            </nav>
+            <SheetClose asChild>
+              <Link
+                to="/contact"
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-mint px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-mint-glow"
+              >
+                Start a project <span aria-hidden>→</span>
+              </Link>
+            </SheetClose>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

@@ -5,9 +5,9 @@ import { WorkMasonry } from "@/components/work-masonry";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Webbly — Websites that compound, not just convert" },
+      { title: "Webbly — Websites that Kickass" },
       { name: "description", content: "Webbly is an independent digital studio designing and building modern websites for ambitious brands." },
-      { property: "og:title", content: "Webbly — Websites that compound, not just convert" },
+      { property: "og:title", content: "Webbly — Websites that Kickass" },
       { property: "og:description", content: "An independent digital studio designing and building modern websites for ambitious brands." },
     ],
   }),
@@ -32,15 +32,15 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-mint/20 blur-[140px]" />
-      <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 md:pt-32 md:pb-40">
+      <div className="relative mx-auto max-w-7xl px-6 pt-12 pb-28 md:pt-20 md:pb-40">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_10px_var(--mint)]" />
           Booking Q3 2026 — 4 slots remaining!
         </div>
-              <h1 className="mt-6 font-display font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[0.9] max-w-5xl">
-        <span className="block">Your vision,</span>
-        <span className="block text-gradient-mint">Your website.</span>
-      </h1>
+        <h1 className="mt-6 font-display font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[0.9] max-w-5xl">
+          <span className="block">Websites that grow</span>
+          <span className="block text-gradient-mint">businesses.</span>
+        </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl">
           Webbly is a website design and development agency. We design, build, launch,
           and continuously improve websites that help businesses grow online.
@@ -124,12 +124,22 @@ function WhatWeDo() {
 }
 
 function Logos() {
-  const logos = ["Halcyon", "Atelier Nord", "Northcard", "Monolith", "Lumen", "Maison Lumière"];
+  const logos = ["Halcyon", "Atelier Nord", "Northcard", "Monolith", "Lumen", "Maison Lumière", "Rob West"];
   return (
     <section className="border-y border-border/60 bg-surface/30">
       <div className="mx-auto max-w-7xl px-6 py-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
         <span className="text-xs uppercase tracking-widest text-muted-foreground mr-2">Trusted by</span>
-        {logos.map((l) => (
+        {logos.map((l) => l === "Maison Lumière" ? (
+          <a
+            key={l}
+            href="https://perfumed-pages-shop.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-display text-xl md:text-2xl font-semibold text-muted-foreground/70 hover:text-foreground transition-colors"
+          >
+            {l}
+          </a>
+        ) : (
           <span key={l} className="font-display text-xl md:text-2xl font-semibold text-muted-foreground/70 hover:text-foreground transition-colors">
             {l}
           </span>
