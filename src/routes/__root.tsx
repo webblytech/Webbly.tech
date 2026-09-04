@@ -133,6 +133,51 @@ import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
 
 function SiteShell({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    const revealSections = (root: ParentNode) => {
+      const sections = root.querySelectorAll<HTMLElement>("section:not(.scroll-reveal)");
+      if (root instanceof HTMLElement && root.matches("section:not(.scroll-reveal)")) {
+        root.classList.add("scroll-reveal");
+        observer.observe(root);
+      }
+      sections.forEach((section) => {
+        section.classList.add("scroll-reveal");
+        observer.observe(section);
+      });
+    };
+
+    revealSections(document);
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach(({ addedNodes }) => {
+        addedNodes.forEach((node) => {
+          if (node instanceof HTMLElement) revealSections(node);
+        });
+      });
+    });
+    mutationObserver.observe(document.querySelector("main") ?? document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      mutationObserver.disconnect();
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <SiteHeader />
