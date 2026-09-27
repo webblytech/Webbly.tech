@@ -61,7 +61,7 @@ function Hero() {
         </div>
         <dl className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl">
           {[
-            ["20+", "Sites shipped"],
+            ["21+", "Sites shipped"],
             ["3 wks", "Avg. timeline"],
             ["4.9★", "Client rating"],
             ["98k", "Views on websites made for clients"],
@@ -129,21 +129,30 @@ function Logos() {
     <section className="border-y border-border/60 bg-surface/30">
       <div className="mx-auto max-w-7xl px-6 py-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
         <span className="text-xs uppercase tracking-widest text-muted-foreground mr-2">Trusted by</span>
-        {logos.map((l) => l === "Maison Lumière" ? (
-          <a
-            key={l}
-            href="https://perfumed-pages-shop.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-            className="font-display text-xl md:text-2xl font-semibold text-muted-foreground/70 hover:text-foreground transition-colors"
-          >
-            {l}
-          </a>
-        ) : (
-          <span key={l} className="font-display text-xl md:text-2xl font-semibold text-muted-foreground/70 hover:text-foreground transition-colors">
-            {l}
-          </span>
-        ))}
+        {logos.map((l) =>
+          l === "Maison Lumière" || l === "Rob West" ? (
+            <a
+              key={l}
+              href={
+                l === "Rob West"
+                  ? "https://rob-west.vercel.app/"
+                  : "https://perfumed-pages-shop.vercel.app/"
+              }
+              target="_blank"
+              rel="noreferrer"
+              className="font-display text-xl md:text-2xl font-semibold text-muted-foreground/70 hover:text-foreground transition-colors"
+            >
+              {l}
+            </a>
+          ) : (
+            <span
+              key={l}
+              className="font-display text-xl md:text-2xl font-semibold text-muted-foreground/70 hover:text-foreground transition-colors"
+            >
+              {l}
+            </span>
+          ),
+        )}
       </div>
     </section>
   );

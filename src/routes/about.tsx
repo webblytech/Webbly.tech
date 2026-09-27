@@ -55,7 +55,7 @@ function AboutPage() {
           </div>
           <div className="grid grid-cols-2 gap-6">
             {[
-              ["20+", "Projects shipped"],
+              ["21+", "Projects shipped"],
               ["38", "Countries served"],
               ["3", "People on the team"],
               ["91%", "Repeat clients"],
