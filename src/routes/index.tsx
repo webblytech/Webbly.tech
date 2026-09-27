@@ -32,7 +32,7 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-mint/20 blur-[140px]" />
-      <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-36 md:pt-24 md:pb-48">
+      <div className="hero-float relative mx-auto max-w-7xl px-6 pt-16 pb-36 md:pt-24 md:pb-48">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_10px_var(--mint)]" />
           Booking Q3 2026 — 2 slots remaining!
