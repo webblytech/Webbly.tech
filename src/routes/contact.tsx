@@ -23,7 +23,7 @@ function ContactPage() {
         <div className="absolute -top-32 left-1/3 h-[420px] w-[620px] rounded-full bg-mint/15 blur-[140px]" />
         <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-12 md:pt-28">
           <div className="text-xs uppercase tracking-widest text-mint mb-4">Contact</div>
-          <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight max-w-4xl leading-[0.95]">
+          <h1 className="hero-float font-display text-5xl md:text-7xl font-bold tracking-tight max-w-4xl leading-[0.95]">
             Tell us what you're <span className="text-gradient-mint">building.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl">

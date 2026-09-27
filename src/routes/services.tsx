@@ -50,7 +50,7 @@ function ServicesPage() {
         <div className="absolute -top-32 right-0 h-[420px] w-[620px] rounded-full bg-mint/15 blur-[140px]" />
         <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-16 md:pt-28">
           <div className="text-xs uppercase tracking-widest text-mint mb-4">Services</div>
-          <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight max-w-4xl leading-[0.95]">
+          <h1 className="hero-float font-display text-5xl md:text-7xl font-bold tracking-tight max-w-4xl leading-[0.95]">
             Everything you need to ship a <span className="text-gradient-mint">great website.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl">

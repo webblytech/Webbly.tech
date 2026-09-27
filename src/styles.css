@@ -165,6 +165,26 @@
 }
 
 @layer utilities {
+  .hero-float {
+    animation: hero-float 4s ease-in-out infinite;
+  }
+
+  @keyframes hero-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-float {
+      animation: none;
+    }
+  }
+
   .scroll-reveal {
     opacity: 0;
     transform: translateY(1.5rem);

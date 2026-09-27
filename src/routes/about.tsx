@@ -18,7 +18,7 @@ function AboutPage() {
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-7xl px-6 pt-20 pb-16 md:pt-28">
           <div className="text-xs uppercase tracking-widest text-mint mb-4">About</div>
-          <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight max-w-5xl leading-[0.95]">
+          <h1 className="hero-float font-display text-5xl md:text-7xl font-bold tracking-tight max-w-5xl leading-[0.95]">
             We're a small studio that <span className="text-gradient-mint">ships big work.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
