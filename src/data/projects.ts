@@ -5,6 +5,7 @@ import architecture from "@/assets/work-architecture.jpg";
 import restaurant from "@/assets/work-restaurant.jpg";
 import fitness from "@/assets/work-fitness.jpg";
 import maisonLumiere from "@/assets/work-maison-lumiere.png";
+import robWest from "@/assets/Rob west website pic.png";
 
 export type Project = {
   slug: string;
@@ -35,6 +36,19 @@ export const projects: Project[] = [
     website: "https://perfumed-pages-shop.vercel.app/",
   },
   {
+    slug: "rob-west",
+    title: "A personal site with a sharper edge",
+    client: "Rob West",
+    category: "Portfolio · Personal Brand",
+    year: "2026",
+    image: robWest,
+    width: 3207,
+    height: 1828,
+    span: "wide",
+    blurb: "A distinctive personal website for Rob West.",
+    website: "https://rob-west.vercel.app/",
+  },
+  {
     slug: "halcyon",
     title: "A dashboard you actually want to open",
     client: "Halcyon Analytics",
@@ -44,7 +58,8 @@ export const projects: Project[] = [
     width: 1024,
     height: 1280,
     span: "tall",
-    blurb: "Marketing site + product UI for a B2B analytics startup. +212% trial signups in 60 days.",
+    blurb:
+      "Marketing site + product UI for a B2B analytics startup. +212% trial signups in 60 days.",
   },
   {
     slug: "atelier",
